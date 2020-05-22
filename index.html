@@ -205,14 +205,35 @@
       </ul>
       <a href="#">Подробнее о компании</a>
     </section>
+    <section>
       <h2>Контакты</h2>
       <p>Вы можете забрать товар сами, заехав в наш офис:</p>  
       <figure>
         <a><img src="img/map.png" width="300" height="158" alt="Карта"></a>
       </figure>
-      <a href="#">Заблудились? Напишите нам!</a>
-    <section>
+      <div>
+        <img src="img/big-map.png" width="943" height="449" alt="Большая карта">
+      </div>
+      <button type="button">Закрыть</button>
 
+      <a href="#">Заблудились? Напишите нам!</a>
+      <form action="https://echo.htmlacademy.ru" method="post">
+        <p>
+          <label for="order-name">Ваше имя:</label>
+          <input type="text" name="name" id="order-name" placeholder="Имя Фамилия" required>
+        </p>
+        <p>
+          <label for="order-email">Ваш e-mail:</label>
+          <input  type="email" name="email" id="order-email" placeholder="email@example.com" required>
+        </p>
+        <p>
+          <label for="order-text">Текст письма:</label>
+          <textarea name="comment" id="order-text" placeholder="В свободной форме"></textarea>
+  
+        </p>
+        <button type="submit">Оформить заказ</button>
+      </form>
+      <button type="button">Закрыть</button>   
     </section>
   </main>
 
