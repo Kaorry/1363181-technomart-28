@@ -62,14 +62,24 @@
 
       <section>
         <form action="https://echo.htmlacademy.ru" method="get">
-          <p>Фильтр:</p>
+          <h3>Фильтр:</h3>
           <fieldset>
             <legend>Цена:</legend>
-            <input type="range" min="0" max="30000" step="1000" value="27000" name="price" id="filter-price">
-
-            <input type="text" name="price-min" id="filter-price-min" value="0">
-            <p>-</p>
-            <input type="text" name="price-max" id="filter-price-max" value="30000">
+            <div>
+              <!--Первый элемент-->
+            </div>
+            <div>
+              <!--Зеленая линия-->
+            </div>
+            <div>
+              <!--Второй элемент-->
+            </div>
+            <div>
+              <input type="text" name="price-min" id="filter-price-min" value="0">
+              <input type="text" name="price-max" id="filter-price-max" value="30000">  
+            </div>
+          
+            
           </fieldset>
           <fieldset>
             <legend>Производители:</legend>
@@ -115,31 +125,22 @@
       </section>
 
       <section>
-        <form action="https://echo.htmlacademy.ru" method="get">
-          <fieldset>
-            <legend>Сортировка:</legend>
-            <ul>
-              <li>
-                <input type="radio" name="sort-group" value="price" id="sort-price" checked>
-                <label for="sort-price">По цене</label>
-              </li>
-              <li>
-                <input type="radio" name="sort-group" value="type" id="sort-type">
-                <label for="sort-type">По типу</label>
-              </li>
-              <li>
-                <input type="radio" name="sort-group" value="functional" id="sort-functional">
-                <label for="sort-functional">По функционалу</label>
-              </li>
-              <li>
-                <a href="">Сортировка по возрастанию</a>
-              </li>
-              <li>
-                <a href="">Сортировка по убыванию</a>
-              </li>
-            </ul>       
-          </fieldset>
-        </form>
+        <h3>Сортировка:</h3>
+        <ul>
+          <li>
+            <a href="#">По цене</a>
+          </li>
+          <li>
+            <a href="#">По типу</a>
+          </li>
+          <li>
+            <a href="#">Сортировка по возрастанию</a>
+          </li>
+          <li>
+            <a href="#">Сортировка по убыванию</a>
+          </li>
+
+        </ul>
       </section>
 
       <section>
