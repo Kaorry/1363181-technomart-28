@@ -1,0 +1,349 @@
+/* Переменные */
+
+:root {
+    --basic-red: #EE3643;
+    --basic-green: #63A63E;
+    --basic-grey: #3D546F;
+    --basic-greylight: #A9A9A9;
+    --basic-background: #F1F5F7;
+    --basic-white: #FFFFFF;
+    --basic-black: #000000;
+    --basic-greyblue: #293449;
+    --basic-darkblue: #32425c;
+    --basic-darkbackground: #161D29;
+
+    --special-yellow: #FFBF47;
+    --special-blue: #3BBCE3;
+    --special-lilac: #DC91D8;
+    --special-greenlight: #8ED78F;
+    --special-yellowlight: #FFD180;
+
+    --success: #5FBB2D;
+    --warning: #FFBF47;
+    --mistake: #BA2732;
+    --gradient-greylight: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #EAEAEA;
+}
+
+/* Основная часть */
+
+body {
+    min-width: 960px;
+    margin: 0; 
+    padding: 0;
+    font-family: 'Cuprum', Arial, sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--basic-black);
+    background-color: var(--basic-white);
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Общие элементы */
+
+.button {
+    background-color: var(--basic-white);
+    color: var(--basic-black);
+}
+
+.button-red {
+    text-transform: uppercase;
+    background-color: var(--basic-red);
+    color: var(--basic-white);
+}
+
+.button-red:active {
+    background-color: var(--mistake);
+}
+
+.site-navigation {
+    list-style: none;
+}
+
+.caption-2 {
+    font-size: 30px;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.visually-hidden {
+    display: none;
+}
+
+.page-title {
+    background-color: var(--basic-background);
+}
+
+/* Обертка сайта */
+
+.main-header {
+    background-color: var(--basic-background);
+}
+
+.main-wrapper {
+    color: var(--basic-white);
+    background-color: var(--basic-greyblue);
+}
+
+.main-wrapper a {
+    color: var(--basic-white);
+}
+
+.search {
+    background-color: var(--basic-greyblue);
+    border-style: none;
+}
+
+.search:focus {
+    background-color: var(--basic-white);
+    border-style: none;
+}
+
+.search::placeholder {
+    color: var(--basic-white);
+}
+
+.search::placeholder:focus {
+    color: var(--basic-black);
+}
+
+.basket-full {
+    background-color: var(--basic-red);
+}
+
+.bookmarks:active,
+.basket-empty:active,
+.basket-full:active,
+.button-order:active
+ {
+    background-color: var(--basic-darkbackground);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.button-order {
+    background-color: var(--basic-green);
+}
+
+.button-order:hover {
+    background-color: var(--success);
+}
+
+/* Главная навигация */
+
+.header-title {
+    color: var(--basic-red);
+    font-style: italic;
+    font-size: 16px;
+    line-height: 23px;
+} 
+
+.telephone {
+    color: var(--basic-red);
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 30px;
+}
+
+.contacts-title address {
+    font-size: 14px;
+    color: var(--basic-darkblue);
+}
+
+.user-navigation .button {
+    font-size: 21px;
+    line-height: 21px;
+}
+
+.button-login:hover {
+    color: var(--basic-red);
+}
+
+.button-login:active {
+    color: var(--basic-greylight);
+}
+
+.main-navigation a {
+    background-color: var(--basic-darkblue);
+    color: var(--basic-white);
+}
+
+.main-navigation a:hover,
+.main-navigation a:active {
+    background-color: var(--basic-greyblue);
+}
+
+.main-navigation a:active {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.personal-account {
+    list-style: none;
+}
+.personal-account a {
+    font-size: 16px;
+    line-height: 18px;
+    color: var(--basic-darkblue);
+}
+
+.personal:hover {
+    color: var(--basic-black);
+}
+
+.personal:active {
+    color: var(--basic-greylight);
+}
+
+.personal-account a:hover {
+    color: var(--basic-red);
+}
+
+.personal-account a:active {
+    color: var(--basic-greylight);
+}
+
+/* Хлебные крошки */
+
+.breadcrumbs {
+    list-style: none;
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;  
+    text-transform: uppercase;
+}
+
+.breadcrumbs a {
+    color: var(--basic-black);
+}
+
+/* Фильтр и сортировка */
+
+
+.filter {
+    color: var(--basic-black);
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 17px;
+    line-height: 30px;  
+    text-transform: uppercase;  
+}
+
+.filter-option {
+    list-style: none;
+    color: var(--basic-black);
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 15px;
+    line-height: 19px;  
+    text-transform: uppercase; 
+}
+
+.button-filter {
+    font-family: 'PT Sans', Arial, sans-serif;
+    text-transform: uppercase; 
+    font-size: 13px;
+    line-height: 18px;
+}
+
+/* Каталог*/
+
+.catalog-list {
+    list-style: none;
+}
+
+.catalog-item {
+    background-color: var(--basic-white);
+}
+
+.catalog-item-title {
+    color: var(--basic-black);
+    font-family: 'PT Sans', Arial, sans-serif;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+.catalog-old-price {
+    color: var(--basic-greylight);
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 17px;
+    line-height: 18px;
+    font-weight: bold;
+    text-decoration: line-through;
+}
+
+.catalog-price {
+    color: var(--basic-white);
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 17px;
+    line-height: 18px;
+    font-weight: bold;
+    background-color: var(--basic-red);
+}
+
+/* Блок о компании */
+
+.index-columns p {
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 13px;
+}
+
+.company-name li {
+    list-style: none;
+}
+
+/* Футер */
+
+.main-footer {
+    background-color: var(--basic-darkblue);
+    color: var(--basic-white);
+}
+
+.address-footer {
+    font-style: normal;
+}
+
+.telephone-footer {
+    color: var(--basic-white);
+}
+
+.first-navigation a {
+    color: var(--basic-white);
+} 
+
+a.highlighting {
+    color: var(--special-yellowlight);
+}
+
+.first-navigation a:hover,
+.second-navigation a:hover {
+    text-decoration: underline;
+}
+
+.first-navigation a:active,
+.second-navigation a:active {
+    opacity: 0.5;
+}
+
+.footer-down {
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.feedback a:hover {
+    text-decoration: underline;
+}
+
+.feedback a:active {
+    color: var(--basic-red);
+    text-decoration: none;
+}
+/* Модальные окна */
+
+.modal {
+    display: none;
+}
