@@ -4,19 +4,21 @@
     --basic-red: #EE3643;
     --basic-green: #63A63E;
     --basic-grey: #3D546F;
-    --basic-greylight: #A9A9A9;
+    --basic-greylight: #C5C5C5;
     --basic-background: #F1F5F7;
     --basic-white: #FFFFFF;
     --basic-black: #000000;
     --basic-greyblue: #293449;
     --basic-darkblue: #32425c;
+    --basic-beige: #F7F3EC;
+    --basic-lightbackground: #A9A9A9;
     --basic-darkbackground: #161D29;
 
     --special-yellow: #FFBF47;
     --special-blue: #3BBCE3;
     --special-lilac: #DC91D8;
     --special-greenlight: #8ED78F;
-    --special-yellowlight: #FFD180;
+    --special-yellowlight: #FFC047;
 
     --success: #5FBB2D;
     --warning: #FFBF47;
@@ -47,6 +49,14 @@ img {
 }
 
 /* Общие элементы */
+
+.logo {
+    background-color: var(--basic-red);
+}
+
+.logo:active {
+    background-color: var(--mistake);
+}
 
 .button {
     background-color: var(--basic-white);
@@ -111,7 +121,8 @@ img {
     color: var(--basic-white);
 }
 
-.search::placeholder:focus {
+.search::placeholder:focus,
+.search::placeholder:active {
     color: var(--basic-black);
 }
 
@@ -132,7 +143,8 @@ img {
     background-color: var(--basic-green);
 }
 
-.button-order:hover {
+.button-order:hover,
+.button-order:focus {
     background-color: var(--success);
 }
 
@@ -162,7 +174,8 @@ img {
     line-height: 21px;
 }
 
-.button-login:hover {
+.button-login:hover,
+.button-login:focus {
     color: var(--basic-red);
 }
 
@@ -176,7 +189,7 @@ img {
 }
 
 .main-navigation a:hover,
-.main-navigation a:active {
+.main-navigation a:focus {
     background-color: var(--basic-greyblue);
 }
 
@@ -193,7 +206,8 @@ img {
     color: var(--basic-darkblue);
 }
 
-.personal:hover {
+.personal:hover,
+.personal:focus {
     color: var(--basic-black);
 }
 
@@ -201,12 +215,73 @@ img {
     color: var(--basic-greylight);
 }
 
-.personal-account a:hover {
+.personal-account a:hover,
+.personal-account a:focus {
     color: var(--basic-red);
 }
 
 .personal-account a:active {
     color: var(--basic-greylight);
+}
+
+/* Предложения на главной */
+
+.category {
+    background-color: var(--special-yellow);
+}
+
+.category h3 {
+    color: var(--basic-white);
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.category:nth-child(2) {
+    background-color: var(--special-blue);
+}
+
+.category:nth-child(3) {
+    background-color: var(--special-lilac);
+}
+
+.category:nth-child(5) {
+    background-color: var(--special-greenlight);
+}
+
+.category:nth-child(6) {
+    background-color: var(--special-yellowlight);
+}
+
+.category {
+    color: var(--basic-white);
+}
+
+.button-offer {
+    color: var(--basic-white);
+    background-color:  rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+}
+
+.button-offer:hover,
+.button-offer:focus {
+    background-color: var(--basic-greylight);
+}
+
+.button-offer:active {
+    background-color: var(--basic-lightbackground);
+}
+
+.slide-title {
+    color: var(--basic-white);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 36px;
+}
+
+.sliders p {
+    color: var(--basic-white);
 }
 
 /* Хлебные крошки */
@@ -225,8 +300,27 @@ img {
 
 /* Фильтр и сортировка */
 
+.filter h3 {
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    text-transform: uppercase; 
+    font-weight: normal;
+    background-color: var(--basic-beige);
+}
 
-.filter {
+.price-block {
+    background-color: var(--basic-beige);
+}
+
+.filter input[type=text] {
+    background-color: var(--basic-beige);
+    font-size: 17px;
+    line-height: 18px;
+    font-family: 'PT Sans', Arial, sans-serif;
+}
+
+.filter-name {
     color: var(--basic-black);
     font-family: 'PT Sans', Arial, sans-serif;
     font-size: 17px;
@@ -248,6 +342,41 @@ img {
     text-transform: uppercase; 
     font-size: 13px;
     line-height: 18px;
+}
+
+/* Сортировка */
+
+.sort {
+    background-color: var(--basic-beige);
+    font-family: 'PT Sans', Arial, sans-serif;
+    text-transform: uppercase; 
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.sort h3 {
+    font-weight: normal;
+}
+
+.sort-goods li {
+    list-style: none;
+}
+
+.sort-goods a {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.sort-goods a:hover,
+.sort-goods a:focus {
+    color: rgba(0, 0, 0);
+}
+
+.sort-goods a:active {
+    color: var(--basic-red);
+}
+
+.sort-goods .active-sort {
+    color: var(--basic-red);
 }
 
 /* Каталог*/
@@ -285,6 +414,46 @@ img {
     background-color: var(--basic-red);
 }
 
+/* Блок о сервисах*/
+
+.services {
+    background-color: var(--basic-background);
+}
+
+.services p {
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 13px;
+}
+
+.service-toggle li {
+    list-style: none;
+    background-color: var(--basic-darkblue);
+    color: var(--basic-white);
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 30px;
+}
+
+.service-toggle input[type=radio] {
+    display: none;
+}
+
+input[checked] + label {
+    background-color: var(--basic-white);
+    color: var(--basic-darkblue);
+}
+
+.service-toggle li:hover,
+.service-toggle li:focus {
+    background-color: var(--basic-greyblue);
+}
+
+.services h4 {
+    font-size: 36px;
+    text-transform: uppercase;
+    color: var(--basic-darkblue);
+}
+
 /* Блок о компании */
 
 .index-columns p {
@@ -294,6 +463,31 @@ img {
 
 .company-name li {
     list-style: none;
+}
+
+/* Список производителей */
+
+.firms-logo {
+    list-style: none;
+}
+
+/* Пагинация */
+
+.pagination li {
+    list-style: none;
+}
+
+.page a {
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: var(--basic-black);
+}
+
+.page .active-page {
+    color: var(--basic-white);
+    background-color: var(--basic-red);
 }
 
 /* Футер */
@@ -320,7 +514,9 @@ a.highlighting {
 }
 
 .first-navigation a:hover,
-.second-navigation a:hover {
+.first-navigation a:focus,
+.second-navigation a:hover,
+.second-navigation a:focus {
     text-decoration: underline;
 }
 
@@ -334,7 +530,8 @@ a.highlighting {
     line-height: 18px;
 }
 
-.feedback a:hover {
+.feedback a:hover,
+.feedback a:focus {
     text-decoration: underline;
 }
 
