@@ -490,6 +490,13 @@ input[checked] + label {
     background-color: var(--basic-red);
 }
 
+/* Дополнительная информация */
+
+.addition p {
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 13px;
+}
+
 /* Футер */
 
 .main-footer {
