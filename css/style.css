@@ -1378,8 +1378,6 @@ fieldset.filter-area:not(:first-of-type) {
 }
 
 .slide-description {
-    display: none;
-    padding-left: 80px;
     min-height: 100%;
     min-width: 100%;
 }
