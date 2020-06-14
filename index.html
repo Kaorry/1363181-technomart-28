@@ -33,7 +33,7 @@
       <div class="container">
         <div class="header-top">
           <section class="header-title">
-            <p>Интернет-магазин строительных материалов и <br>инструментов для ремонта</p>
+            <p>Интернет-магазин строительных материалов и инструментов для ремонта</p>
           </section>
           <section class="contacts-title">
             <a class="telephone" href="tel: +78125550555">
@@ -380,31 +380,40 @@
       </div>
     </footer>
 
-    <section class="modal">
-      <div>
-        <img src="img/big-map.png" width="943" height="449" alt="Большая карта">
+    <section class="modal-container modal-feedback">
+      <div class="modal">
+        <form action="https://echo.htmlacademy.ru" method="post">
+          <div class="modal-main-part">
+            <p class="modal-input">
+              <label for="order-name">Ваше имя:</label>
+              <input type="text" name="name" id="order-name" placeholder="Имя Фамилия" required>
+            </p>
+            <p class="modal-input">
+              <label for="order-email">Ваш e-mail:</label>
+              <input  type="email" name="email" id="order-email" placeholder="email@example.com" required>
+            </p>
+            <p class="modal-input">
+              <label for="order-text">Текст письма:</label>
+              <textarea name="comment" id="order-text" placeholder="В свободной форме"></textarea>
+            </p>
+          </div>
+          <div class="modal-submit">
+            <button class="button button-red" type="submit">Отправить</button>
+          </div>  
+          <button class="modal-close" type="button" aria-label="Закрыть">
+            <svg enable-background="new 0 0 21 21" height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg"><path d="m13.273 10.5 7.422-7.422c.389-.389.389-1.025 0-1.414l-1.359-1.359c-.389-.389-1.025-.389-1.414 0l-7.422 7.422-7.422-7.422c-.389-.389-1.025-.389-1.414 0l-1.359 1.359c-.389.389-.389 1.025 0 1.414l7.422 7.422-7.421 7.422c-.389.389-.389 1.025 0 1.414l1.359 1.359c.389.389 1.025.389 1.414 0l7.422-7.422 7.422 7.422c.389.389 1.025.389 1.414 0l1.359-1.359c.389-.389.389-1.025 0-1.414z" fill="#ee3643"/></svg>
+          </button>
+        </form>
       </div>
-      <button type="button">Закрыть</button>
     </section>
 
-    <section class="modal">
-      <form action="https://echo.htmlacademy.ru" method="post">
-        <p>
-          <label for="order-name">Ваше имя:</label>
-          <input type="text" name="name" id="order-name" placeholder="Имя Фамилия" required>
-        </p>
-        <p>
-          <label for="order-email">Ваш e-mail:</label>
-          <input  type="email" name="email" id="order-email" placeholder="email@example.com" required>
-        </p>
-        <p>
-          <label for="order-text">Текст письма:</label>
-          <textarea name="comment" id="order-text" placeholder="В свободной форме"></textarea>
-        </p>
-        <button type="submit">Оформить заказ</button>
-      </form>
-      <button type="button">Закрыть</button>   
+    <section class="modal-container modal-map">
+      <div class="modal">
+        <img src="img/big-map.png" width="943" height="449" alt="Большая карта">
+        <button class="modal-close" type="button" aria-label="Закрыть">
+          <svg enable-background="new 0 0 21 21" height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg"><path d="m13.273 10.5 7.422-7.422c.389-.389.389-1.025 0-1.414l-1.359-1.359c-.389-.389-1.025-.389-1.414 0l-7.422 7.422-7.422-7.422c-.389-.389-1.025-.389-1.414 0l-1.359 1.359c-.389.389-.389 1.025 0 1.414l7.422 7.422-7.421 7.422c-.389.389-.389 1.025 0 1.414l1.359 1.359c.389.389 1.025.389 1.414 0l7.422-7.422 7.422 7.422c.389.389 1.025.389 1.414 0l1.359-1.359c.389-.389.389-1.025 0-1.414z" fill="#ee3643"/></svg>
+        </button>
+      </div>
     </section>
-
   </body>
 </html>

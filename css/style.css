@@ -24,9 +24,11 @@
     --basic-social-background: #212A3A;
     --basic-border-green: #367315;
     --basic-green-background: #518534;
+    --basic-modal-background: #F4F4F4;
     --basic-white-opacity: rgba(255, 255, 255, 0.5);
     --basic-shadow-opacity: rgba(0, 0, 0, 0.15);
     --basic-black-opacity: rgba(0, 0, 0, 0.0001);
+    --basic-modal-opacity: rgba(0, 0, 0, 0.25);
 
     --special-yellow: #FFBF47;
     --special-blue: #3BBCE3;
@@ -429,13 +431,19 @@ img {
 }
 
 .user-navigation-logged .personal {
-    position: relative;
+    width: 210px;
     font-size: 21px;
     line-height: 21px;
     padding: 12px 45px;
     display: flex;
     flex-direction: row;
     text-align: center;
+}
+
+.user-account {
+    position: relative;
+    display: flex;
+    flex-direction: row;
 }
 
 .user-navigation-logged .svg-login {
@@ -446,7 +454,7 @@ img {
 
 .user-navigation-logged .svg-logout {
     position: absolute;
-    right: 17px;
+    left: 262px;
     padding: 0;
 }
 
@@ -854,9 +862,9 @@ img {
     margin-top: 10px;
 }
 
-fieldset.filter-area:not(:first-of-type) {
+/* fieldset.filter-area:not(:first-of-type) {
     margin-top: 3px;
-}
+} */
 
 .filter-area:not(:last-of-type) {
     border-bottom: 1px solid var(--basic-border-button);
@@ -915,6 +923,17 @@ fieldset.filter-area:not(:first-of-type) {
     justify-content: space-between;
     align-items: center;
     margin-top: 9px;
+}
+
+.max-price {
+    position: relative;
+}
+
+.max-price::before {
+    position: absolute;
+    content: "–";
+    top: 8px;
+    left: -19px;
 }
 
 .filter input[type=number] {
@@ -1378,8 +1397,9 @@ fieldset.filter-area:not(:first-of-type) {
 }
 
 .slide-description {
+    display: none;
     min-height: 100%;
-    min-width: 100%;
+    margin-left: 80px;
 }
 
 .slide-current {
@@ -1406,22 +1426,20 @@ fieldset.filter-area:not(:first-of-type) {
 }
 
 .slide-description:nth-child(1) {
-    position: absolute;
     background-image: url(../img/delivery.png);
-    background-position: 231px 61px;
+    background-position: 151px 61px;
     background-repeat: no-repeat;
-    z-index: 20;
 }
 
 .slide-description:nth-child(2) {
     background-image: url(../img/guarantee.png);
-    background-position: 319px 46px;
+    background-position: 239px 46px;
     background-repeat: no-repeat;
 }
 
 .slide-description:nth-child(3) {
     background-image: url(../img/credit.png);
-    background-position: 245px 45px;
+    background-position: 165px 45px;
     background-repeat: no-repeat;
 }
 
@@ -1433,7 +1451,6 @@ fieldset.filter-area:not(:first-of-type) {
     align-self: center;
     border-radius: 3px;
 }
-
 
 /* Блок о компании */
 .index-columns {
@@ -1788,8 +1805,153 @@ a.highlighting {
     color: var(--basic-red);
     text-decoration: none;
 }
+
 /* Модальные окна */
 
-.modal {
+.modal-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
     display: none;
+}
+
+.modal-container.modal-show {
+    display: flex;
+}
+
+.modal {
+    position: relative;
+    margin: auto;
+    top: -20px;
+    border-top: 7px solid var(--basic-red);
+    box-sizing: border-box; 
+    box-shadow: 0px 10px 20px var(--basic-modal-opacity);
+}
+
+.modal-close {
+    position: absolute;
+    top: 14px;
+    right: 11px;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.modal-feedback .modal {
+    width: 620px;
+    min-height: 430px;
+}
+
+.modal-main-part {
+    background-color: var(--basic-white);
+}
+
+.modal-feedback .modal-main-part {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: first baseline;
+    padding: 38px 80px;
+}
+
+.modal-input {
+    margin-top: 0;
+    margin-bottom: 13px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-input:first-of-type {
+    margin-right: 20px;
+}
+
+.modal-feedback label {
+    padding-bottom: 11px;
+}
+
+.modal-feedback input,
+.modal-feedback textarea { 
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 13px;
+    line-height: 24px;
+    padding-left: 12px;
+    border: none;
+    border: 2px solid var(--basic-greylight);
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+.modal-feedback input {
+    display: flex;
+    align-items: center;
+    min-height: 38px;
+}
+
+.modal-feedback textarea {
+    min-height: 114px;
+    max-height: 500px;
+    width: 100%;
+    resize: vertical;
+}
+
+.modal-submit {
+    background-color: var(--basic-modal-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 112px;
+}
+
+.modal-submit .button {
+    border: none;
+    min-width: 460px;
+}
+
+.modal-map .modal {
+    width: 943px;
+    height: 442px;
+    overflow: hidden;
+}
+
+.modal-cart {
+    display: none;
+}
+
+.modal-cart .modal-main-part {
+    position: relative;
+    width: 620px;
+    min-height: 163px;
+
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-cart .modal-main-part::before {
+    content: "";
+    position: absolute;
+    left: 80px;
+    background-image: url(../img/icon-mark.svg);
+    background-repeat: no-repeat;
+    width: 66px;
+    height: 66px;
+}
+
+.modal-submit .button {
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 38px;
+    padding: 0;
+    min-width: 192px;
+}
+
+.modal-submit .button-red {
+    margin-right: 10px;
 }
