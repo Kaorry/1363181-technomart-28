@@ -3,6 +3,7 @@
 :root {
     --basic-red: #ee3643;
     --basic-red-light: #FF5357;
+    --basic-red-focus: #CA2C37;
     --basic-green: #63A63E;
     --basic-grey: #3D546F;
     --basic-greylight: #c5c5c5;
@@ -25,10 +26,12 @@
     --basic-border-green: #367315;
     --basic-green-background: #518534;
     --basic-modal-background: #F4F4F4;
+    --basic-black-opacity: rgba(0, 0, 0, 0.0001);
     --basic-white-opacity: rgba(255, 255, 255, 0.5);
     --basic-shadow-opacity: rgba(0, 0, 0, 0.15);
-    --basic-black-opacity: rgba(0, 0, 0, 0.0001);
+    --basic-dark-opacity: rgba(0, 0, 0, 0.24);
     --basic-modal-opacity: rgba(0, 0, 0, 0.25);
+    --basic-sort-opacity: rgba(0, 0, 0, 0.3);
 
     --special-yellow: #FFBF47;
     --special-blue: #3BBCE3;
@@ -114,7 +117,7 @@ img {
     text-align: center;
     height: 42px;
     
-    box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.24),
+    box-shadow: 0px 5px 0px var(--basic-dark-opacity),
                 0px 5px 0px var(--basic-red);
     
     display: inline-flex;
@@ -124,7 +127,7 @@ img {
 
 .logo-main:active {
     background-color: var(--mistake);
-    box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.24),
+    box-shadow: 0px 5px 0px var(--basic-dark-opacity),
                 0px 5px 0px var(--mistake);
 }
 
@@ -145,6 +148,7 @@ img {
 .button:hover svg,
 .button:focus svg {
     fill: var(--basic-white);
+    transition: 0.7s;
 }
 
 .button svg,
@@ -163,6 +167,12 @@ img {
     padding-bottom: 9px;
     display: flex;
     justify-self: center;
+}
+
+.button-red:focus,
+.button-red:hover {
+    background-color: var(--basic-red-focus);
+    transition: 0.7s;
 }
 
 .button-red:active {
@@ -297,6 +307,7 @@ img {
 
 .search:hover .search-icon {
     fill: var(--basic-white);
+    transition: 0.7s;
 }
 
 .search-input:focus + .search-icon {
@@ -315,6 +326,12 @@ img {
     color: var(--basic-white-opacity);
 }
 
+.top-navigation .basket-full:hover,
+.top-navigation .basket-full:focus {
+    background-color: var(--basic-red-focus);
+    transition: 0.7s;
+}
+
 .top-navigation .button-order {
     background-color: var(--basic-green);
 }
@@ -322,6 +339,7 @@ img {
 .top-navigation .button-order:hover,
 .top-navigation .button-order:focus {
     background-color: var(--success);
+    transition: 0.7s;
 }
 
 /* Главная навигация */
@@ -407,6 +425,7 @@ img {
 .button-login:hover,
 .button-login:focus {
     color: var(--basic-red);
+    transition: 0.7s;
 }
 
 .button-login:active {
@@ -416,6 +435,7 @@ img {
 .button-login:hover svg,
 .button-login:focus svg {
     fill: var(--basic-grey);
+    transition: 0.7s;
 }
 
 .button-login svg,
@@ -492,6 +512,7 @@ img {
 .main-navigation a:hover,
 .main-navigation a:focus {
     background-color: var(--basic-greyblue);
+    transition: 0.7s;
 }
 
 .main-navigation a:active {
@@ -501,6 +522,7 @@ img {
 .personal:hover,
 .personal:focus {
     color: var(--basic-black);
+    transition: 0.7s;
 }
 
 .personal:active {
@@ -526,6 +548,7 @@ img {
 .personal-account a:hover,
 .personal-account a:focus {
     color: var(--basic-red);
+    transition: 0.7s;
 }
 
 .personal-account a:active {
@@ -634,6 +657,7 @@ img {
 .button-offer:focus::after {
     background-color: var(--basic-greylight);
     opacity: 0.3;
+    transition: 0.7s;
 }
 
 .button-offer:active::after {
@@ -681,7 +705,7 @@ img {
     margin: 0;
 }
 
-.slide-description {
+.slide-subtitle {
     color: var(--basic-white);
     margin: 0;
     margin-top: 6px;
@@ -713,7 +737,7 @@ img {
     right: 20px;
 }
 
-.slider-controls {
+.slider-state {
     position: absolute;
     bottom: 36px;
     left: 50%;
@@ -724,18 +748,18 @@ img {
     justify-content: space-between;
 }
 
-.slider-controls button {
+.slider-state .slide-state {
     padding: 0;
-    width: 10px;
-    height: 10px;
-    background-color: var(--basic-red);
+    width: 8px;
+    height: 8px;
+    background-color: var(--basic-white);
     border: 2px solid var(--basic-white);
     border-radius: 50%;
     cursor: pointer;
 }
 
-.slider-controls .current {
-    background-color: var(--basic-white);
+.slider-state .current {
+    background-color: var(--basic-red);
   }
 
 /* Cтраницы каталога */
@@ -1006,12 +1030,14 @@ img {
 .filter-checkbox:not(:disabled):hover + label::before {
     background-image: url(../img/checkbox-off-focus.svg);
     background-repeat: no-repeat;
+    transition: 0.7s;
 }
 
 .filter-checkbox:not(:disabled):checked:focus + label::before,
 .filter-checkbox:not(:disabled):checked:hover +  label::before {
     background-image: url(../img/checkbox-on-focus.svg);
     background-repeat: no-repeat;
+    transition: 0.7s;
 }
 
 .filter-radio + label::before {
@@ -1040,12 +1066,14 @@ img {
 .filter-radio:not(:disabled):hover + label::before {
     background-image: url(../img/radio-off-focus.svg);
     background-repeat: no-repeat;
+    transition: 0.7s;
 }
 
 .filter-radio:not(:disabled):checked:focus + label::before,
 .filter-radio:not(:disabled):checked:hover +  label::before {
     background-image: url(../img/radio-on-focus.svg);
     background-repeat: no-repeat;
+    transition: 0.7s;
 }
 
 .button-filter {
@@ -1059,7 +1087,16 @@ img {
     border-width: 1px;
     border-color: var(--basic-border-button);
     border-style: solid;
-    
+}
+
+.button-filter:hover, 
+.button-filter:focus {
+    border-color: var(--basic-greylight);
+    transition: 0.7s;
+}
+
+.button-filter:active {
+    border-color: var(--basic-red);
 }
 
 /* Сортировка */
@@ -1098,7 +1135,7 @@ img {
 }
 
 .sort-goods .name-sort {
-    color: rgba(0, 0, 0, 0.3);
+    color: var(--basic-sort-opacity);
     margin-left: 35px;
     margin-right: 35px;
     border-bottom-width: 1px;
@@ -1108,10 +1145,11 @@ img {
 
 .sort-goods .name-sort:hover,
 .sort-goods .name-sort:focus {
-    color: rgba(0, 0, 0);
+    color: var(--basic-black);
     border-bottom-width: 1px;
     border-bottom-color: var(--basic-red);
     border-bottom-style: solid;
+    transition: 0.7s;
 }
 
 .sort-goods .name-sort:active,
@@ -1129,6 +1167,7 @@ img {
 .img-sort:hover,
 .img-sort:focus {
     fill: var(--basic-black);
+    transition: 0.7s;
 }
 
 .img-sort:active,
@@ -1222,6 +1261,7 @@ img {
 .button-buy:focus,
 .button-buy:hover {
     background-color: var(--success);
+    transition: 0.7s;
 }
 
 .button-buy:active { 
@@ -1237,6 +1277,7 @@ img {
 .button-add-bookmark:focus,
 .button-add-bookmark:hover {
     border-color: var(--basic-darkblue);
+    transition: 0.7s;
 }
 
 .button-add-bookmark:active {
@@ -1248,11 +1289,13 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    animation: buy-show 1s;
 }
 
 .catalog-item:hover,
 .catalog-item:focus {
     box-shadow: 0px 4px 20px var(--basic-shadow-opacity);
+    transition: 0.7s;
 }
 
 .catalog-item:hover .catalog-item-img,
@@ -1330,7 +1373,7 @@ img {
     margin: 0;
 }
 
-.services-bloque {
+.services-block {
     display: flex;
     flex-direction: row;
     margin-top: 21px;
@@ -1367,16 +1410,17 @@ img {
                 inset 0px 1px 0px var(--basic-shadow); 
 }
 
-.service-toggle .current {
-    background-color: var(--basic-white);
-    color: var(--basic-darkblue);
-    box-shadow: 0px 1px 0px var(--basic-white);
-}
-
 .service-toggle button:hover,
 .service-toggle button:focus {
     background-color: var(--basic-greyblue);
     color: var(--basic-white);
+    transition: 0.7s;
+}
+
+.service-toggle button.current {
+    background-color: var(--basic-white);
+    color: var(--basic-darkblue);
+    box-shadow: 0px 1px 0px var(--basic-white);
 }
 
 .service-description {
@@ -1581,6 +1625,7 @@ img {
 .firm-item a:focus, 
 .firm-item a:active {
     box-shadow: 0px 4px 20px var(--basic-shadow-opacity);
+    transition: 0.7s;
 }
 
 .firm-item a:active {
@@ -1621,6 +1666,7 @@ img {
 .pagination-item a:hover,
 .pagination-item a:focus {
     border-color: var(--basic-greylight);
+    transition: 0.7s;
 }
 
 .pagination-item a:active,
@@ -1787,6 +1833,7 @@ a.highlighting {
 .social-button:hover, 
 .social-button:active {
     background-color: var(--basic-red);
+    transition: 0.7s;
 }
 
 .feedback {
@@ -1822,6 +1869,7 @@ a.highlighting {
     display: flex;
 }
 
+
 .modal {
     position: relative;
     margin: auto;
@@ -1856,6 +1904,11 @@ a.highlighting {
     justify-content: first baseline;
     padding: 38px 80px;
 }
+
+.modal-feedback.modal-show {
+    animation: appearance 0.6s;
+}
+
 
 .modal-input {
     margin-top: 0;
@@ -1917,6 +1970,13 @@ a.highlighting {
     overflow: hidden;
 }
 
+.modal-map img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
 .modal-cart {
     display: none;
 }
@@ -1954,4 +2014,36 @@ a.highlighting {
 
 .modal-submit .button-red {
     margin-right: 10px;
+}
+
+/* Анимация */
+
+@keyframes appearance {
+    0% {
+      transform: translateY(500px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+}
+
+@keyframes buy-show {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes buy-escape {
+    100% {
+        opacity: 1;
+    }
+
+    0% {
+        opacity: 0;
+    }
 }

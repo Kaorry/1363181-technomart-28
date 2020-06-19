@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>HTML Academy: Техномарт</title>
     <link href="./css/normalize.css" rel="stylesheet">
-    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/style.min.css" rel="stylesheet">
   </head>
 
   <body class="page-body">
@@ -84,24 +84,24 @@
           <div class="slider">
             <div class="slide slide-current">
               <h2 class="slide-title">Перфораторы</h2>
-              <p class="slide-description">Настоящие мужские игрушки</p>
+              <p class="slide-subtitle">Настоящие мужские игрушки</p>
               <img src="./img/perforators.jpg" alt="Перфораторы">
               <a class="button button-red" href="catalog.html">Открыть каталог</a>
             </div>
             <div class="slide">
               <h2 class="slide-title">Дрели</h2>
-              <p class="slide-description">Соседям на радость!</p>
+              <p class="slide-subtitle">Соседям на радость!</p>
               <img src="./img/drills.jpg" alt="Дрели">
               <a class="button button-red" href="catalog.html">Открыть каталог</a>
             </div>
-            <button class="control control-backward" type="button" aria-label="Назад" disabled></button>
+            <button class="control control-backward" type="button" aria-label="Назад"></button>
             <button class="control control-forward" type="button" aria-label="Вперед"></button>
-            <div class="slider-controls">
-              <button class="current" type="button" aria-label="Первый слайд"></button>
-              <button type="button" aria-label="Второй слайд"></button>
+            <div class="slider-state">
+              <div class="slide-state current"></div>
+              <div class="slide-state"></div>
             </div>
           </div>
-          
+
         </div>
         <div class="category">
           <h3>Скидки 50%</h3>
@@ -260,7 +260,7 @@
           <p>Хороший интернет-магазин отличается от плохого не только ценами!</p>
           <p>Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
         
-          <div class="services-bloque">
+          <div class="services-block">
             <div class="service-toggle"> 
               <button class="current" type="button">Доставка</button>
               <button type="button">Гарантия</button>
@@ -303,9 +303,11 @@
           <h2 class="caption-second">Контакты</h2>
           <p>Вы можете забрать товар сами, заехав в наш офис:</p>  
           <figure class="map-picture">
-            <a><img src="img/map.png" width="300" height="158" alt="Карта"></a>
+            <a class="map-link" href="">
+              <img src="img/map.png" width="300" height="158" alt="Карта">
+            </a>
           </figure>
-          <a class="button button-red" href="#">Заблудились? Напишите нам!</a>
+          <a class="button button-red feedback-link" href="#">Заблудились? Напишите нам!</a>
         </section>
       </div>
     </main>
@@ -373,7 +375,7 @@
             </div>
             <div>
               <p>Разработано &ndash;</p>
-              <a class="highlighting" href="http://htmlacademy.ru">htmlacademy.ru</a>
+              <a class="highlighting" href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
             </div>
           </section>
         </div>
@@ -381,7 +383,7 @@
     </footer>
 
     <section class="modal-container modal-feedback">
-      <div class="modal">
+      <div class="modal feedback-form">
         <form action="https://echo.htmlacademy.ru" method="post">
           <div class="modal-main-part">
             <p class="modal-input">
@@ -409,11 +411,29 @@
 
     <section class="modal-container modal-map">
       <div class="modal">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037872533277!2d30.320858716096975!3d59.93871648187614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1592237582099!5m2!1sru!2sru" width="943" height="449" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" ></iframe>
         <img src="img/big-map.png" width="943" height="449" alt="Большая карта">
         <button class="modal-close" type="button" aria-label="Закрыть">
           <svg enable-background="new 0 0 21 21" height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg"><path d="m13.273 10.5 7.422-7.422c.389-.389.389-1.025 0-1.414l-1.359-1.359c-.389-.389-1.025-.389-1.414 0l-7.422 7.422-7.422-7.422c-.389-.389-1.025-.389-1.414 0l-1.359 1.359c-.389.389-.389 1.025 0 1.414l7.422 7.422-7.421 7.422c-.389.389-.389 1.025 0 1.414l1.359 1.359c.389.389 1.025.389 1.414 0l7.422-7.422 7.422 7.422c.389.389 1.025.389 1.414 0l1.359-1.359c.389-.389.389-1.025 0-1.414z" fill="#ee3643"/></svg>
         </button>
       </div>
     </section>
+
+    <section class="modal-container modal-cart">  
+      <div class="modal">
+        <div class="modal-main-part">
+          <p>Товар добавлен в корзину!</p>
+        </div>
+        <div class="modal-submit">
+          <a class="button button-red" href="">Оформить заказ</a>
+          <a class="button" href="">Продолжить покупки</a>
+        </div>
+        <button class="modal-close" type="button" aria-label="Закрыть">
+            <svg enable-background="new 0 0 21 21" height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg"><path d="m13.273 10.5 7.422-7.422c.389-.389.389-1.025 0-1.414l-1.359-1.359c-.389-.389-1.025-.389-1.414 0l-7.422 7.422-7.422-7.422c-.389-.389-1.025-.389-1.414 0l-1.359 1.359c-.389.389-.389 1.025 0 1.414l7.422 7.422-7.421 7.422c-.389.389-.389 1.025 0 1.414l1.359 1.359c.389.389 1.025.389 1.414 0l7.422-7.422 7.422 7.422c.389.389 1.025.389 1.414 0l1.359-1.359c.389-.389.389-1.025 0-1.414z" fill="#ee3643"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <script src="/js/script.min.js"></script>
   </body>
 </html>
