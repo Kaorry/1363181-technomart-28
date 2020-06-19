@@ -98,11 +98,11 @@ if (buttonsArray.length > 0 && buttonsArray.length === slidesArray.length) {
         document.querySelector(".service-description .slide-current").classList.remove("slide-current");
     };
 
-    for (var i = 0; i < buttonsArray.length; i++) {
+    for (let i = 0; i < buttonsArray.length; i++) {
         buttonsArray[i].addEventListener(
             "click", 
             function (event) { 
-                if (event.target.classList.contains('current') === false) {
+                if (event.target.classList.contains("current") === false) {
                     clearCurrent();
                     buttonsArray[i].classList.add("current"); 
                     slidesArray[i].classList.add("slide-current");
