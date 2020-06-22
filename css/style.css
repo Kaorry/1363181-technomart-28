@@ -824,6 +824,7 @@ img {
     background-position: center;
     background-repeat: no-repeat;
     display: inline-block;
+    vertical-align: baseline;
     width: 38px;
     height: 10px;
     
