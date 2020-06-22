@@ -6,6 +6,7 @@
     --basic-red-focus: #CA2C37;
     --basic-green: #63A63E;
     --basic-grey: #3D546F;
+    --basic-yellow: #FFD180;
     --basic-greylight: #c5c5c5;
     --basic-background: #F1F5F7;
     --basic-white: #FFFFFF;
@@ -1763,7 +1764,7 @@ img {
 } 
 
 a.highlighting {
-    color: var(--special-yellowlight);
+    color: var(--basic-yellow);
 }
 
 .first-navigation a:hover,
